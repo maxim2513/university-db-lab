@@ -1,0 +1,40 @@
+db_factory_home:
+  path:     /
+  defaults: { _controller: DBFactoryBundle:Default:index }
+
+db_factory_create:
+  path:     /create
+  defaults: { _controller: DBFactoryBundle:Default:create }
+
+db_factory_add_class:
+  path:     /create/{name}
+  defaults: { _controller: DBFactoryBundle:Add:class}
+  requirements:
+    methods:  GET|POST
+
+db_factory_list:
+  path:     /list
+  defaults: { _controller: DBFactoryBundle:Default:list}
+
+db_factory_querylist:
+  path:     /query
+  defaults: { _controller: DBFactoryBundle:Query:index}
+
+db_factory_list_class:
+  path:     /list/{name}
+  defaults: { _controller: DBFactoryBundle:Table:class}
+
+db_factory_query:
+  path:     /query/{id}
+  defaults: { _controller: DBFactoryBundle:Query:query}
+  requirements:
+    methods:  GET|POST
+
+db_factory_deletquery:
+  path:     /delete/query/{id}
+  defaults: { _controller: DBFactoryBundle:Query:delete}
+  requirements:
+    methods:  GET|POST
+
+
+

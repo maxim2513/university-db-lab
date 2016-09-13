@@ -1,0 +1,27 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block title %}New {{ name }}{% endblock %}
+
+    {% block body %}
+        <header>
+            <h1>Create {{ name }} </h1>
+        </header>
+        {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+            <div class="blogger-notice">
+                {{  flashMessage  }}
+            </div>
+        {% endfor %}
+
+
+
+        <form action="{{ path('db_factory_add_class',{'name':name}) }}" method="post" {{ form_enctype(form) }} class="blogger">
+            {{ form_errors(form) }}
+
+            {{ form_widget(form) }}
+
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Submit"/>
+        </form>
+    {% endblock %}

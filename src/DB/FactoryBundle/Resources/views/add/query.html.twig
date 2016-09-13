@@ -1,0 +1,49 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block title %} {{ query.name }}{% endblock %}
+
+    {% block body %}
+        <header >
+            <h1>{{ query.name }} </h1>
+        </header>
+        {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+            <div class="blogger-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <p>
+            {{ query.comment }}
+        </p>
+        {% if  param %}
+            <form action="{{ path('db_factory_query',{'id':query.id}) }}" method="post" class="blogger">
+                {% for val in param %}
+                   <label>{{ val }}</label> <input type="text" name="{{ val }}"/>
+                {% endfor %}
+
+                <input type="submit" value="Submit"/>
+            </form>
+        {% endif %}
+<br>
+        {% if result %}
+            <table id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    {% for h in result[0]|keys %}
+                        <th> {{ h }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in result %}
+                    <tr>
+                        {% for cell in row %}
+                            <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+</tbody>
+            </table>
+
+        {% endif %}
+    {% endblock %}

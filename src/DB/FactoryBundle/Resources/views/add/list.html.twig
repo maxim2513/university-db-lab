@@ -1,0 +1,16 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block title %}List {{ name }}{% endblock %}
+
+    {% block body %}
+        <header>
+            <h1>List {{ name }} </h1>
+        </header>
+        {% for form in forms %}
+            <div class="blogger">{{ loop.index }})
+                {{ form(form,{ 'disabled':'disabled' }) }}
+            </div>
+        {% endfor %}
+
+    {% endblock %}

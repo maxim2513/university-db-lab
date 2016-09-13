@@ -1,0 +1,24 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block body %}
+
+    <nav>
+    <ul class="navigation">
+        <li><a href="{{ path('db_factory_list_class',{'name': 'FactoryType'}) }}">List factory type</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Factory'}) }}">List factory</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Product'}) }}">List Product</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Warehouse'})}}">List Warehouse</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'WarehouseStatus'}) }}">List Warehouse Status</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Status'}) }}">List Status</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Payment'}) }}">List Payment method</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Shipping'}) }}">List Shipping method</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'Orders'}) }}">List Order</a></li>
+        <li><a href="{{ path('db_factory_list_class',{'name': 'ProductSet'}) }}">List Product Set</a></li>
+
+
+
+
+    </ul>
+    </nav>
+{% endblock %}

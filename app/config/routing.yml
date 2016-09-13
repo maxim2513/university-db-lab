@@ -1,0 +1,8 @@
+db_factory:
+    resource: "@DBFactoryBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

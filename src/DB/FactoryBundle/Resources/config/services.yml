@@ -1,0 +1,4 @@
+services:
+#    db_factory.example:
+#        class: DB\FactoryBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

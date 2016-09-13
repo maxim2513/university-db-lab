@@ -1,0 +1,25 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block title %}List Queries{% endblock %}
+
+    {% block body %}
+        <header>
+            <h1>List Queries </h1>
+        </header>
+        {% for query in queries %}
+            <article class="blog">
+                <header>
+                    <h2><a href="{{ path('db_factory_query', { 'id': query.id}) }}">{{ query.name }}</a></h2>
+                </header>
+                <div class="snippet">
+                    <p>{{ query.comment(100) }}</p>
+                    <p class="continue"><a href="{{ path('db_factory_query', { 'id': query.id}) }}">Continue using...</a></p>
+                    <p class="continue"><a href="{{ path('db_factory_deletquery', { 'id': query.id}) }}">Remove  Query</a></p>
+
+                </div>
+
+            </article>
+        {% endfor %}
+
+    {% endblock %}

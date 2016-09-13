@@ -1,0 +1,25 @@
+{% extends 'DBFactoryBundle::layout.html.twig' %}
+
+
+{% block body %}
+
+    <nav>
+    <ul class="sidebar">
+        <li><a href="{{ path('db_factory_add_class',{'name': 'FactoryType'}) }}">Create factory type</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Factory'}) }}">Create factory</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Product'}) }}">Add Product</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Warehouse'})}}">Create Warehouse</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'WarehouseStatus'}) }}">Create Warehouse Status</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Status'}) }}">Create Status</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Payment'}) }}">Create Payment method</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Shipping'}) }}">Create Shipping method</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Orders'}) }}">Create Order</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'ProductSet'}) }}">Create Product Set</a></li>
+        <li><a href="{{ path('db_factory_add_class',{'name': 'Query'}) }}">Create query</a></li>
+
+
+
+
+    </ul>
+    </nav>
+{% endblock %}
